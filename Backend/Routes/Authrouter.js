@@ -2,7 +2,6 @@ const { signup } = require('../Controllers/Authcontroller');
 const { signupvalidatation } = require('../Middlewares/Authvalidation');
 
 const router = require('express').Router();
-const moongose = require('mongoose')
 router.post('/login', (req, res)=>{
 })
 
