@@ -14,6 +14,7 @@ const signupvalidatation = (req,res,next)=>{
     next();
 }
 const loginvalidatation = (req,res,next)=>{
+    console.log("Request body:", req.body); // Log the incoming request body
     const Schema = joi.object({
       email:joi.string().email().required(),
       password:joi.string().min(4).max(100).required(),
@@ -21,7 +22,7 @@ const loginvalidatation = (req,res,next)=>{
     const {error}=Schema.validate(req.body);
     if(error){
         return res.status(400)
-        .json({message:"bad request", error })
+        .json({message:"email pass error", error })
     }
     next();
 }
