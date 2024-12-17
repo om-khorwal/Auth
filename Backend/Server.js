@@ -6,8 +6,7 @@ const Authroute = require('./Routes/Authrouter')
 const Authhome = require('./Routes/Authhome')
 
 require('dotenv').config();
-require('./Models/User')
-require('./Models/Db')
+require('./Models/Db');
 const PORT = process.env.PORT || 5001
 
 server.use(cors());
@@ -21,5 +20,5 @@ server.post('/',(req,res)=>{
 
 
 server.listen(PORT, ()=>{
-    console.log("hello")
+    console.log("hello");
 });
