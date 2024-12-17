@@ -6,8 +6,8 @@ const Authroute = require('./Routes/Authrouter')
 const Authhome = require('./Routes/Authhome')
 
 require('dotenv').config();
-require('./Models/db')
 require('./Models/User')
+require('./Models/Db')
 const PORT = process.env.PORT || 5001
 
 server.use(cors());
