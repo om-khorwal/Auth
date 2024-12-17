@@ -1,19 +1,20 @@
+const { required } = require('joi');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     name:{
         type:String,
-        require:true
+        required:true
     },
     email:{
         type:String,
-        require:true,
+        required:true,
         unique:true
     },
     password:{
         type:String,
-        require:true
+        required:true
     },
 })
-const UserModel = mongoose.model('user', UserSchema)
+const UserModel = mongoose.model('users', UserSchema)
 module.exports = UserModel; 
