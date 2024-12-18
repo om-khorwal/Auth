@@ -19,7 +19,7 @@ function Login() {
     const handlesubmit= async (e)=>{
         try{
             e.preventDefault();
-            const response = await fetch('http://localhost:5001/auth/login',{
+            const response = await fetch('https://auth-rigd-backend.vercel.app/',{
                 method:"POST",
                 body:JSON.stringify(logindata),
                 headers:{'Content-Type':'application/json'}

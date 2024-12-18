@@ -19,7 +19,7 @@ function Home() {
 
   const fetchproducts = async () => {
     try {
-      const url = 'http://localhost:5001/home'
+      const url = 'https://auth-rigd-backend.vercel.app/home'
       const headers = {
         headers: {
           'Authorization': localStorage.getItem("jwttoken")

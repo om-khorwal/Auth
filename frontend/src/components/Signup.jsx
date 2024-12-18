@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 function Signup() {
     const [signupdata , updatedsignupdata] = useState({
@@ -7,7 +8,8 @@ function Signup() {
         email:"",
         password:"" 
     })
-
+    const navigate = useNavigate();
+    
     const change =(e)=>{
         const {name,value} = e.target;
         console.log(name,value)
@@ -17,13 +19,14 @@ function Signup() {
     const handlesubmit= async (e)=>{
         // try{
             e.preventDefault();
-            const response = await fetch('http://localhost:5001/auth/signup',{
+            const response = await fetch('https://auth-rigd-backend.vercel.app/',{
                 method:"POST",
                 body:JSON.stringify(signupdata),
                 headers:{'Content-Type':'application/json'}
             })
             const data = await response.json();
             console.log(data);
+            navigate('./login')
         // }
         // catch{
         //     console.log(Error)
