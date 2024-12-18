@@ -43,10 +43,9 @@ function Home() {
   return (
 
     <>
-      <div>Home</div>
-      <button onClick={handlelogout}>logout</button>
+      <div id='home'>Home</div>
 
-      <div>
+      <div id='content'>
         {
           product && product?.map((item,index) => (
             <ul key={index}>
@@ -56,6 +55,9 @@ function Home() {
             </ul>
           ))
         }
+      </div>
+      <div id='logout'>
+       <button onClick={handlelogout}>logout</button>
       </div>
     </>
 
