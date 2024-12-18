@@ -19,14 +19,14 @@ function Signup() {
     const handlesubmit= async (e)=>{
         // try{
             e.preventDefault();
-            const response = await fetch('https://auth-rigd-backend.vercel.app/',{
+            const response = await fetch('https://auth-rigd-backend.vercel.app/auth/signup',{
                 method:"POST",
                 body:JSON.stringify(signupdata),
                 headers:{'Content-Type':'application/json'}
             })
             const data = await response.json();
             console.log(data);
-            navigate('./login')
+            navigate('/login')
         // }
         // catch{
         //     console.log(Error)

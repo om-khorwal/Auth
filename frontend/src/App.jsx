@@ -8,12 +8,12 @@ import Home from './components/Home';
 function App() {
   const isAuthenticated = () => localStorage.getItem("jwttoken");
 
-  const RedirectIfLoggedIn = ({ element }) => {
-    return isAuthenticated() ? <Navigate to="/home" /> : element;
+  const RedirectIfLoggedIn = ({ children }) => {
+    return isAuthenticated() ? <Navigate to="/home" /> : children;
   };
-  const ProtectedRoute = ({ element }) => {
+  const ProtectedRoute = ({ children }) => {
     const token = localStorage.getItem("jwttoken");
-    return token ? element : <Navigate to="/login" />;
+    return token ? children : <Navigate to="/login" />;
   };
   return (
     <>
